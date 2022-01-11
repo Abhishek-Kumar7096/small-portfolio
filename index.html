@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="hero">
+        <!-- Navigation Bar -->
+        <nav>
+            <img src="images/logo.png" alt="Website logo" class="logo">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">PORTFOLIO</a></li>
+                <li><a href="">SERVICES</a></li>
+                <li><a href="">HIRE ME</a></li>
+            </ul> 
+            <img src="images/moon.png" alt="" id="icon">
+        </nav>
+
+        <!-- Content -->
+        <div class="info">
+            <h1>I'm <span>Kate</span> Amelia</h1>
+            <p>This is my Portfolio website to showcase my all works are related to <br> web development and UI design.</p>
+            <a href="">Download CV</a>
+        </div>
+
+        <!-- Images on the webpage -->
+        <div class="imgBox">
+            <img src="images/pattern.png" class="backImg">
+            <img src="images/girl.png" class="mainImg">
+        </div>
+
+        <!-- Social links on the page -->
+        <div class="socialLinks">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <script>
+        let icon = document.getElementById("icon")
+
+        // checking if local storage already contains value for theme item
+        if(localStorage.getItem("theme") == null){
+            localStorage.setItem("theme", "light")
+        }
+        let localData = localStorage.getItem("theme")
+
+        // changing to modes depending on value of theme item 
+        if(localData == "light"){
+            icon.src = "images/moon.png"
+            document.body.classList.remove("darkTheme")
+        }
+        else if(localData == "dark"){
+            icon.src = "images/sun.png"
+            document.body.classList.add("darkTheme")
+        }
+
+        // listening to the click function on the icon element
+        icon.onclick = () => {
+            document.body.classList.toggle("darkTheme")
+            if(document.body.classList.contains("darkTheme")){
+                icon.src = "images/sun.png"
+                localStorage.setItem("theme", "dark")
+            }
+            else{
+                icon.src = "images/moon.png"
+                localStorage.setItem("theme", "light")
+            }
+        }
+    </script>
+</body>
+</html>

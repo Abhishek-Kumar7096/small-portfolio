@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* dark mode css */
+:root{
+    --primaryColor: #edf2fc;
+    --secondaryColor: #212121;
+    --outlineColor: #ff4321;
+}
+.darkTheme{
+    --primaryColor: #000106;
+    --secondaryColor: #fff;
+}
+
+#icon{
+    width: 30px;
+    cursor: pointer;
+}
+
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+
+/* dark mode css ends here */
+
+
+/* main hero div css */
+.hero{
+    height: 100vh;
+    width: 100%;
+    background: var(--primaryColor);
+    font-family: sans-serif;
+    position: relative;
+}
+
+
+/* navigation bar css of webpage */
+nav{
+    width: 84%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 100px;
+    cursor: pointer;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--secondaryColor);
+}
+
+nav ul li a:hover{
+    color: var(--outlineColor);
+}
+
+
+/* content in the webpage css */
+.info{
+    margin-left: 8%;
+    margin-top: 15%;
+}
+
+.info h1{
+    font-size: 70px;
+    color: var(--secondaryColor);
+    margin-bottom: 20px;
+}
+
+.info h1 span{
+    color: var(--outlineColor);
+}
+
+.info p{
+    color: var(--secondaryColor);
+    line-height: 22px;
+}
+
+.info a{
+    background: var(--secondaryColor);
+    padding: 10px 18px;
+    text-decoration: none;
+    color: var(--primaryColor);
+    display: inline-block;
+    margin: 30px 0;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.info a:hover{
+    background: var(--outlineColor);
+    color: var(--secondaryColor);
+
+}
+
+
+/* pictures in the webpage */
+.imgBox{
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.imgBox img{
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
+
+.imgBox:hover .backImg{
+    bottom: 40px;
+}
+
+.imgBox:hover .mainImg{
+    left: 54%;
+}
+
+/* social links css on the webpage */
+
+.socialLinks{
+    margin-left: 8%;
+    margin-top: 100px;
+}
+
+.socialLinks a{
+    font-size: 30px;
+    color: var(--secondaryColor);
+    margin-right: 30px;
+    transition: 0.5s;
+}
+
+.socialLinks a:hover{
+    color: var(--outlineColor);
+}
